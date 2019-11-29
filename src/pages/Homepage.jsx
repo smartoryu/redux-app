@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { add, minus } from "./../redux/actions";
+import { add, minus, reset } from "./../redux/actions";
 
 class Homepage extends Component {
   state = {};
@@ -10,6 +10,10 @@ class Homepage extends Component {
   };
   minus = () => {
     this.props.minus();
+  };
+
+  reset = () => {
+    this.props.reset();
   };
 
   render() {
@@ -22,6 +26,9 @@ class Homepage extends Component {
         <button onClick={this.add} className="btn btn-primary ml-3">
           +
         </button>
+        <button onClick={this.reset} className="btn btn-primary ml-3">
+          O
+        </button>
       </div>
     );
   }
@@ -33,4 +40,4 @@ const MapStatetoProps = state => {
   };
 };
 
-export default connect(MapStatetoProps, { add, minus })(Homepage);
+export default connect(MapStatetoProps, { add, minus, reset })(Homepage);

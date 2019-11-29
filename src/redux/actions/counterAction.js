@@ -1,4 +1,4 @@
-import { ADD, MINUS } from "../type";
+import { ADD, MINUS, RESET } from "../type";
 
 export const add = () => {
   return {
@@ -9,5 +9,11 @@ export const add = () => {
 export const minus = () => {
   return {
     type: MINUS
+  };
+};
+
+export const reset = () => {
+  return {
+    type: RESET
   };
 };

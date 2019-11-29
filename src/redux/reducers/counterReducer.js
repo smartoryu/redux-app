@@ -1,4 +1,4 @@
-import { ADD, MINUS } from "../type";
+import { ADD, MINUS, RESET } from "../type";
 
 const INITIAL_STATE = 0;
 
@@ -8,6 +8,8 @@ export default (state = INITIAL_STATE, action) => {
       return state + 1;
     case MINUS:
       return state - 1;
+    case RESET:
+      return INITIAL_STATE;
     default:
       return state;
   }
